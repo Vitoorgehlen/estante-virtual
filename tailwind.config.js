@@ -6,13 +6,39 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
-    },
+    extend: {},
   },
-  plugins: [],
+  daisyui: {
+    themes: [
+      {
+        lightTheme: {
+          primary: '#F8860D',
+          secondary: '#6E0B75',
+          accent: '#007EBD',
+          neutral: '#1F2937',
+          'base-100': '#FFFFFF',
+          info: '#3ABFF8',
+          success: '#36D399',
+          warning: '#FBBD23',
+          error: '#F87272',
+        },
+        darkTheme: {
+          primary: '#F28C18',
+          secondary: '#6D3A9C',
+          accent: '#51A800',
+          neutral: '#1B1D1D',
+          'base-100': '#212121',
+          info: '#2563EB',
+          success: '#16A34A',
+          warning: '#D97706',
+          error: '#DC2626',
+        },
+      },
+    ],
+  },
+  plugins: [
+    require('daisyui'),
+    require('tailwindcss-animated'),
+    require('@tailwindcss/typography'),
+  ],
 }
